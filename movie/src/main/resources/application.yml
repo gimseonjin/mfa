@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: movie
+server:
+  port: 8080
+
+base-url:
+  auth: http://localhost:8081
+
+jwt:
+  signing-key: qL8H9w6y1fVxB3YjN7uL0Mk2pC4rXs5Z8aN+YtPqRsU=

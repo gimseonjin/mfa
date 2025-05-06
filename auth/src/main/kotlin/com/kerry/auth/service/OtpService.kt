@@ -4,12 +4,14 @@ import com.kerry.auth.domain.Otp
 import com.kerry.auth.domain.User
 import com.kerry.auth.repository.OtpJpaRepository
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import kotlin.random.Random
 
 @Service
 class OtpService(
     private val otpJpaRepository: OtpJpaRepository
 ) {
+    @Transactional(readOnly = true)
     fun checkOtp(
         username:String,
         otp: String
@@ -18,13 +20,14 @@ class OtpService(
             ?: false
     }
 
+    @Transactional
     fun renewOtp(
         user:User,
     ): String {
         val otp: String = generateOtpCode()
 
         val targetOtp = otpJpaRepository.findByUsername(user.username)
-            ?.apply { renewOtp(otpCode) }
+            ?.apply { renewOtp(otp) }
             ?: Otp.of(
                 username = user.username,
                 otpCode = otp

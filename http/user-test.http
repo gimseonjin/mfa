@@ -30,3 +30,18 @@ Content-Type: application/json
   "username": "kerry",
   "otp": "670786"
 }
+
+### 3) Movie Service에서 Hello World 호출 - username/password 인증
+GET http://localhost:8080/login
+username: kerry
+password: mypassword123
+
+
+### 4) Movie Service에서 Hello World 호출 - OTP 인증
+GET http://localhost:8080/login
+username: kerry
+otp: 545477
+
+### 5) Movie Service에서 Hello World 호출 - JWT 인증
+GET http://localhost:8080/hello
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImtlcnJ5In0.TLr5KqHWbME-fkHmasxjZMi_KcvxjJcHMpfn8tBdw4M

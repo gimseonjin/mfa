@@ -19,6 +19,14 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/movie" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/movie" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
